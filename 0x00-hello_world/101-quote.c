@@ -2,9 +2,10 @@
 #include <unistd.h>
 /**
  * main- Entry point of the program.
- * Return: 0 (sucessful)
+ * Return: 1 (sucessful)
  */
 int main(void)
 {
-printf("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+fput("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+return (1);
 }
