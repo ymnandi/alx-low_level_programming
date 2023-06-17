@@ -8,8 +8,7 @@ int main(void)
 {
 int v;
 for (v = 0; v <= 10; v++)
-{ putchar(v);
-}
+putchar(v);
 putchar('\n');
 return (0);
 }
