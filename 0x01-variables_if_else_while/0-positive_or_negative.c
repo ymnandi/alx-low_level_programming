@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* main-Use srand to determine if number is postive,negative or zero */
-
-/* Return: 0 if succesfull*/
+/**
+ * main - Entry point
+ * Description: print if the number is positive, negative or zero
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 int n;
