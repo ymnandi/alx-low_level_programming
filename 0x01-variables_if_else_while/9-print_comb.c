@@ -16,10 +16,10 @@ putchar('0' + v);
 if (k != 9 || v != 9)
 {
 putchar(',', ' ');
+putchar(' ');
 }
 }
 {
-putchar('\n');
 return (0);
 }
 }
