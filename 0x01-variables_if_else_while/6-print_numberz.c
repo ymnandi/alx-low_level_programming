@@ -7,8 +7,10 @@
 int main(void)
 {
 int v;
-for (v = 0; v <= 10;v++)
-putchar(v + '0');
+for (v = 0; v <= 10; v++)
+{
+putchar('0' + v);
+}
 putchar('\n');
 return (0);
 }
