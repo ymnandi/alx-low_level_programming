@@ -10,6 +10,7 @@ int k, l;
 for (k = 0; k <= 99; k++)
 {
 for (l = k; l <= 99; l++)
+if (k < l)
 {
 int tens1 = k / 10;
 int ones1 = k % 10;
