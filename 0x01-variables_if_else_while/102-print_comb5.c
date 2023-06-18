@@ -20,10 +20,13 @@ putchar(ones1 + '0');
 putchar(' ');
 putchar(tens2 + '0');
 putchar(ones2 + '0');
+if (k != 98 || l != 99)
+{
 putchar(',');
-
 putchar(' ');
 }
+}
+putchar('\n');
 }
 return (0);
 }
