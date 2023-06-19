@@ -19,12 +19,13 @@ for (dig3 = dig2 + 1; dig3 <= 9; dig3++)
 putchar(dig1  + '0');
 putchar(dig2  + '0');
 putchar(dig3  + '0');
-if (dig1 != 7 || dig2 != 8 || dig3 != 9)
+if (!(dig1 == 7 && dig2 == 8 && dig3 == 9))
 putchar(',');
 putchar(' ');
 }
 }
 }
 }
+printf("\n");
 return (0);
 }
