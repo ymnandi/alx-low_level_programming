@@ -15,7 +15,12 @@ for (v = k + 1; v <= 9; v++)
 {
 putchar(k + '0');
 putchar(v + '0');
+if (k != 8 || v != 9)
+{
+putchar(',');
+putchar(' ');
 }
 }
 return (0);
+}
 }
