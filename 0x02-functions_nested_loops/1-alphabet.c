@@ -1,7 +1,6 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
  * print_alphabet - function that prints alphabets
  * Return: passes output
  */
@@ -13,4 +12,3 @@ for (c = 'a'; c <= 'z'; c++)
 putchar(c);
 putchar('\n');
 }
-
