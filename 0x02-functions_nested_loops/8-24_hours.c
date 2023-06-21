@@ -8,9 +8,11 @@
  */
 void jack_bauer(void)
 {
-for (int h = 0; h < 24; h++)
+int h = 0;
+int m = 0;
+while (h < 24)
 {
-for (int m = 0; m < 60; m++)
+while (m < 60)
 {
 _putchar(h / 10 + '0');
 _putchar(h % 10 + '0');
@@ -18,6 +20,9 @@ _putchar(':');
 _putchar(m / 10 + '0');
 _putchar(m % 10 + '0');
 _putchar('\n');
+m++;
 }
+m = 0;
+h++;
 }
 }
