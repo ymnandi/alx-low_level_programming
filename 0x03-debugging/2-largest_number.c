@@ -2,25 +2,25 @@
 #include <stdio.h>
 /**
  * largest_number - returns the largest of 3 numbers
- * @q: first integer
- * @v: second integer
- * @p: third integer
- * Return: .
+ * @a: first integer
+ * @b: second integer
+ * @c: third integer
+ * Return: largest number
  */
-int largest_number(int q, int v, int p)
+int largest_number(int a, int b, int c)
 {
 int lagnum;
-if (q > v && q > p)
+if (a > b && a > c)
 {
-lagnum = q;
+lagnum = a;
 }
-else if (v > q && v > p)
+else if (b > a && b > c)
 {
-lagnum = v;
+lagnum = b;
 }
 else
 {
-lagnum = p;
+lagnum = c;
 }
 return (lagnum);
 }
