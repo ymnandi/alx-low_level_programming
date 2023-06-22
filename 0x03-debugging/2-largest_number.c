@@ -9,18 +9,18 @@
  */
 int largest_number(int a, int b, int c)
 {
-int lagnum;
+int largest;
 if (a > b && a > c)
 {
-lagnum = a;
+largest = a;
 }
 else if (b > a && b > c)
 {
-lagnum = b;
+largest = b;
 }
 else
 {
-lagnum = c;
+largest = c;
 }
-return (lagnum);
+return (largest);
 }
