@@ -8,17 +8,25 @@
  */
 int main(void)
 {
-    long int n = 612852475143;
-    long int i = 2;
+long int i, j, n = 612852475143;
 
-    while (i < n)
-    {
-        if (n % i == 0)
-        {
-            n = n / i;
-        }
-        i++;
-    }
-    printf("%ld\n", n);
-    return (0);
+for (i = 2; i <= sqrt(n); i++)
+{
+if (n % i == 0)
+{
+for (j = 2; j <= i; j++)
+{
+if (j == i)
+{
+printf("%ld\n", i);
+n = n / i;
+i = 1;
+}
+if (i % j == 0)
+break;
+}
+}
+}
+printf("%ld\n", n);
+return (0);
 }
