@@ -8,17 +8,21 @@
 int main(void)
 {
 int password[100];
-int sum = 0;
-int i = 0;
-int n = 0;
-srand (time(NULL));
-while (sum < 2772)
+int i, sum, n;
+sum = 0;
+srand(time(NULL));
+for (i = 0; i < 100; i++)
 {
-password[i] = rand() % 127;
-if (password[i] > 32)
+password[i] = rand() % 78;
+sum += (password[i] + '0');
+putchar(password[i] + '0');
+if ((2772 - sum)-'0' < 78)
 {
-sum += password[i];
-i++;
+n = 2772 - sum - '0';
+sum += n;
+putchar(n + '0');
+break;
 }
 }
+return (0);
 }
