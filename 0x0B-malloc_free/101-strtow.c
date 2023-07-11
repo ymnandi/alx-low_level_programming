@@ -2,50 +2,59 @@
 #include <stdlib.h>
 
 /**
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
+ */
+
+int count_word(char *s)
+{
+int i, n = 0;
+for (i = 0; s[i]; i++)
+{
+if (s[i] != ' ' && (s[i + 1] == ' ' || s[i + 1] == '\0'))
+n++;
+}
+return (n);
+}
+/**
  * strtow - splits a string into words.
  * @str: string to split
  * Return: pointer to an array of strings (words) or NULL if it fails
  */
+
 char **strtow(char *str)
 {
-char **array;
-int i, j, k, l, m, n = 0, len = 0, wc = 0;
+char **matrix, *tmp;
+int i, j, k = 0, len = 0, words;
 if (str == NULL || *str == '\0')
 return (NULL);
-for (i = 0; str[i]; i++)
-len++;
-len++;
-array = malloc(sizeof(char *) * len);
-if (array == NULL)
+words = count_word(str);
+if (words == 0)
 return (NULL);
-for (i = 0; str[i]; i++)
-{
-if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-wc++;
-}
-if (wc == 0)
+matrix = malloc(sizeof(char *) * (words + 1));
+if (matrix == NULL)
 return (NULL);
-for (i = 0; str[i]; i++)
+for (i = 0; i < words; i++)
 {
-if (str[i] != ' ')
-{
-for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
+for (len = 0; str[k] == ' '; k++)
+;
+for (; str[k] != ' ' && str[k] != '\0'; k++)
 len++;
-array[n] = malloc(sizeof(char) * len);
-if (array[n] == NULL)
+matrix[i] = malloc(sizeof(char) * (len + 1));
+if (matrix[i] == NULL)
 {
-for (k = 0; k < n; k++)
-free(array[k]);
-free(array[n]);
+for (i--; i >= 0; i--)
+free(matrix[i]);
+free(matrix);
 return (NULL);
 }
-for (l = i, m = 0; l < j; l++, m++)
-array[n][m] = str[l];
-array[n][m] = '\0';
-n++;
-i = j;
+tmp = matrix[i];
+for (j = 0; j < len; j++, tmp++)
+*tmp = str[k - len + j];
+*tmp = '\0';
 }
-}
-array[n] = NULL;
-return (array);
+matrix[i] = NULL;
+return (matrix);
 }
