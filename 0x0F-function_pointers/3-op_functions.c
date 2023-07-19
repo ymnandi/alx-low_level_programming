@@ -1,34 +1,64 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
+
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
 
 /**
- * main - performs simple operations
- * @argc: number of arguments
- * @argv: array of arguments
+ * op_add - Returns the sum of two numbers.
+ * @a: The first number.
+ * @b: The second number.
  *
- * Return: 0 if successful, 98 if number of arguments is wrong, 99 if operator
- * is not +, -, *, /, or %, 100 if user tries to divide (/ or %) by 0
+ * Return: The sum of a and b.
  */
-int main(int argc, char *argv[])
+int op_add(int a, int b)
 {
-int (*f)(int, int);
-int a, b, result;
+	return (a + b);
+}
+/**
+ * op_sub - Returns the difference of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The difference of a and b.
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+/**
+ * op_mul - Returns the product of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The product of a and b.
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+/**
+ * op_div - Returns the division of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The quotient of a and b.
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+/**
+ * op_mod - Returns the remainder of the division of two numbers.
+ * @a: The first number.
+ * @b: The second number.
+ *
+ * Return: The remainder of the division of a by b.
+ */
+int op_mod(int a, int b)
+{
+	return (a % b);
+}
 
-if (argc != 4)
-{
-printf("Error\n");
-exit(98);
-}
-f = get_op_func(argv[2]);
-if (f == NULL)
-{
-printf("Error\n");
-exit(99);
-}
-a = atoi(argv[1]);
-b = atoi(argv[3]);
-result = f(a, b);
-printf("%d\n", result);
-return (0);
-}
