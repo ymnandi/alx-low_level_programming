@@ -11,23 +11,22 @@
  */
 int main(int argc, char *argv[])
 {
-int (*f)(int, int);
-int a, b, result;
-if (argc != 4)
+int b, result;
+char *op;
+if (argc != 2)
 {
 printf("Error\n");
-exit(98);
+exit(1);
 }
-f = get_op_func(argv[2]);
-if (f == NULL)
+b = atoi(argv[1]);
+if (b < 0)
 {
 printf("Error\n");
-exit(99);
+exit(2);
 }
-a = atoi(argv[1]);
-b = atoi(argv[3]);
-result = f(a, b);
-printf("%d\n", result);
+op = (char *)main;
+for (result = 0; result < b; result++)
+printf("%02hhx ", op[result]);
+printf("\n");
 return (0);
 }
-
