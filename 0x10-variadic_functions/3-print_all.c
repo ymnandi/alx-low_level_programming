@@ -5,48 +5,46 @@
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
- *
- * Return: void
  */
 void print_all(const char * const format, ...)
 {
-va_list ap;
-unsigned int i = 0, j;
-char *str;
-const char t_arg[] = "cifs";
-va_start(ap, format);
-while (format && format[i])
+int i = 0;
+char *str, *sep = "";
+
+va_list list;
+
+va_start(list, format);
+
+if (format)
 {
-j = 0;
-while (t_arg[j])
+while (format[i])
 {
-if (format[i] == t_arg[j] && format[i + 1] != '\0')
-{
-switch (t_arg[j])
+switch (format[i])
 {
 case 'c':
-printf("%c", va_arg(ap, int));
+printf("%s%c", sep, va_arg(list, int));
 break;
 case 'i':
-printf("%d", va_arg(ap, int));
+printf("%s%d", sep, va_arg(list, int));
 break;
 case 'f':
-printf("%f", va_arg(ap, double));
+printf("%s%f", sep, va_arg(list, double));
 break;
 case 's':
-str = va_arg(ap, char *);
+str = va_arg(list, char *);
 if (!str)
 str = "(nil)";
-printf("%s", str);
+printf("%s%s", sep, str);
 break;
+default:
+i++;
+continue;
 }
-printf(", ");
-break;
-}
-j++;
-}
+sep = ", ";
 i++;
 }
+}
+
 printf("\n");
-va_end(ap);
+va_end(list);
 }
