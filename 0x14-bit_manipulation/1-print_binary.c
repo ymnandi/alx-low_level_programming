@@ -13,26 +13,17 @@ void print_binary(unsigned long int n)
 {
 int i, count = 0;
 unsigned long int check;
-for (i = 1UL << 63; i > 0; i = i >> 1)
+for (i = 63; i >= 0; i--)
 {
-check = n & i;
-if (check == i)
+check = n >> i;
+if (check & 1)
 {
-count++;
-break;
-}
-}
-if (count == 0)
-_putchar('0');
-else
-{
-for (i = 1UL << 63; i > 0; i = i >> 1)
-{
-check = n & i;
-if (check == i)
 _putchar('1');
-else if (check == 0)
+count++;
+}
+else if (count)
 _putchar('0');
 }
-}
+if (!count)
+_putchar('0');
 }
