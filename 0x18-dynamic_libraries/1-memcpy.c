@@ -22,4 +22,3 @@ src_ptr++;
 }
 return (dest);
 }
-
